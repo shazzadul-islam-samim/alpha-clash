@@ -30,14 +30,14 @@ function showelement(elementId){
 // Step: Generate a random alphabet
 function continueGame(){
     const alphabet=getArandom();
-    console.log('Your random Alphabet: ',alphabet);
+    //console.log('Your random Alphabet: ',alphabet);
 
     //set randomly generate alphabet to the screen(Show it)
     const currentalphabet=document.getElementById('current-alphabet');
     currentalphabet.innerText=alphabet;
 
     //set background color
-    backgroundcolor(alphabet);
+    addbackground(alphabet);
 
 }
 // step:1 random alphabet
@@ -58,7 +58,64 @@ function getArandom(){
 }
 
 // background color
-function backgroundcolor(elementid){
+function addbackground(elementid){
     const element=document.getElementById(elementid);
     element.classList.add('bg-orange-400');
 }
+function removebackground(elementid){
+    const element=document.getElementById(elementid);
+    element.classList.remove('bg-orange-400');
+}
+
+//Part:2//////////////////////////////////////////////////////////////////////////////////////////////////
+
+// document.addEventListener('keyup', function keyboardhandler (){
+//     console.log('keypress')
+// }) or
+function keyboardhandler(event){
+    // console.log(event.key);
+    const playerpress=event.key;
+    console.log('player press: ',playerpress);
+    const currentalpha=document.getElementById('current-alphabet');
+    // console.log(currentalpha.innerText)
+    const required=currentalpha.innerText;
+    // console.log('Required: ',required,' You press: ',playerpress);
+
+    //conditional statement
+    if(required===playerpress){
+        console.log('You got a point');
+        //update score:
+        //get the current score
+        const currentScElement=document.getElementById('current-score');
+        const currentScoret=currentScElement.innerText;
+        // console.log( currentScoret); it's string
+        const currentscore=parseInt(currentScoret);
+        console.log(currentscore);
+
+        //increase the score by 1
+        const newscore=currentscore+1;
+        //show the final score
+        currentScElement.innerText=newscore;
+
+        //start a new round
+        removebackground(playerpress);
+        continueGame();
+        
+    }
+    else{
+        console.log('You lost a life');
+
+        //current life
+        const currentlifeEle=document.getElementById('current-life');
+        const currentlifetext=currentlifeEle.innerText;
+        const currentlifeN=parseInt(currentlifetext);
+
+        //reduce the current life -1
+        const currentLife=currentlifeN-1;
+
+        //display the update life count
+        currentlifeEle.innerText=currentLife;
+    }
+}
+document.addEventListener('keyup', keyboardhandler);
+

@@ -80,16 +80,17 @@
                 <!-- keyboard end -->
                 <!-- life score -->
                  <div class="flex justify-around w-full">
-                    <button class="btn text-white" style="background-image: linear-gradient(to right top, #960089, #a0279a, #a93eab, #b352bb, #bc64cc);">
+                    <!-- display life -->
+                    <button id="" class="btn text-white" style="background-image: linear-gradient(to right top, #960089, #a0279a, #a93eab, #b352bb, #bc64cc);">
                         <p>Life</p>
                         <i class="fa-solid fa-heart"></i>
-                        <p>1</p>
+                        <p id="current-life">5</p>
                     </button>
-                    <!-- another -->
+                    <!-- display score -->
                     <button class="ml-16 btn text-white" style="background-image: linear-gradient(to right, #5f0096, #70149c, #8023a3, #9031a9, #9f3eb0);">
                         <p>Score</p>
                         <i class="fa-solid fa-circle-dollar-to-slot"></i>
-                       <p>1</p>
+                       <p id="current-score">0</p>
                       </button>
                  </div>
             </div>
@@ -98,8 +99,7 @@
         <!-- playground end -->
         <section class="score hidden">
             <div class="flex min-h-screen justify-center items-center">
-                <div class=" text-center p-10 rounded-2xl" style="background: linear-gradient(to right, #340764, #311b70, #2e297c, #2a3786, #274390, #244690, #214990, #204c8f, #1d4785, #1a427c, #183e72, #163969);
-">
+                <div class=" text-center p-10 rounded-2xl" style="background: linear-gradient(to right, #340764, #311b70, #2e297c, #2a3786, #274390, #244690, #214990, #204c8f, #1d4785, #1a427c, #183e72, #163969);">
                     <h1 class="mb-5 text-5xl text-white"><span class="font-bold">Score: </span><span>14</span></h1>
                     <button class="mb-5 btn btn-outline text-white border-none">Play Again</button>
                     <p class="mb-5 text-white">Practice will make you pro...</p>

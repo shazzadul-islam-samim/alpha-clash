@@ -97,11 +97,12 @@
 
         </section>
         <!-- playground end -->
-        <section class="score hidden">
+        <section id="final-score" class="score hidden">
             <div class="flex min-h-screen justify-center items-center">
                 <div class=" text-center p-10 rounded-2xl" style="background: linear-gradient(to right, #340764, #311b70, #2e297c, #2a3786, #274390, #244690, #214990, #204c8f, #1d4785, #1a427c, #183e72, #163969);">
+                    <h3 class="text-2xl text-white">Game Over!</h3>
                     <h1 class="mb-5 text-5xl text-white"><span class="font-bold">Score: </span><span>14</span></h1>
-                    <button class="mb-5 btn btn-outline text-white border-none">Play Again</button>
+                    <button onclick="playagain()" class="mb-5 btn btn-outline text-black border-none bg-white">Play Again</button>
                     <p class="mb-5 text-white">Practice will make you pro...</p>
                 </div>
             </div>

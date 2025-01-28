@@ -115,7 +115,23 @@ function keyboardhandler(event){
 
         //display the update life count
         currentlifeEle.innerText=currentLife;
+
+        //next
+        if(currentLife===0){
+            gameover();
+        }
     }
 }
 document.addEventListener('keyup', keyboardhandler);
 
+//Final Score
+
+function gameover(){
+    hideelement('play-ground');
+    showelement('final-score');
+}
+
+function playagain(){
+    hideelement('final-score');
+    showelement('play-ground');
+}
